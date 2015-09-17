@@ -29,7 +29,7 @@ def main():
     oauth_token_secret = token_params['oauth_token_secret'][0]
 
     #generate cookie with request token key and secret to pass through authorization process
-    cookie = Cookie.Cookie()
+    cookie = Cookie.SimpleCookie()
     cookie_token = 'token=%s&token_secret=%s' % (oauth_token, oauth_token_secret)
     cookie['request_token'] = cookie_token
     cookie['timestamp'] = time.time()
